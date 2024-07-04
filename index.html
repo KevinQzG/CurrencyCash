@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CurrencyCash is a currency converter that allows you to check live rates">
+    <meta name="keywords" content="currency, converter, exchange, rates, alerts, notifications">
+    <meta name="author" content="Kevin Quiroz">
+    <title>CurrencyCash</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" href="./assets/images/icono.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <span class="logo-text"><i class="fa-solid fa-hand-holding-dollar"></i> CurrencyCash</span>
+        </div>
+        <ul>
+            <li><a href="#home"><i class="fa-solid fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fa-solid fa-address-card"></i> About us</a></li>
+        </ul>
+        <div class="language-selector">
+            <img src="./assets/images/gb.svg" alt="English" class="language-option" data-lang="en">
+            <img src="./assets/images/sp.svg" alt="Español" class="language-option" data-lang="es">
+            <img src="./assets/images/fr.svg" alt="Français" class="language-option" data-lang="fr">
+            <img src="./assets/images/br.svg" alt="Português" class="language-option" data-lang="pt">
+            <img src="./assets/images/it.svg" alt="Italiano" class="language-option" data-lang="it">
+            <img src="./assets/images/de.svg" alt="Deutsch" class="language-option" data-lang="de">
+        </div>
+    </nav>
+    
+    <main>
+        <div class="converter-container">
+            <h1>Currency Converter</h1>
+            <p>Quickly find out the value of one currency against another, choose from hundreds of them.</p>
+            <div class="converter">
+                <div class="currency-row">
+                    <label for="from-amount">Amount</label>
+                    <div class="currency-input">
+                        <div class="custom-select" id="from-currency">
+                            <div class="select-selected">Select currency</div>
+                            <div class="select-items select-hide">
+                            </div>
+                        </div>
+                        <input type="number" id="from-amount" placeholder="1000.00">
+                    </div>
+                </div>
+                <div class="exchange-container">
+                    <div class="decorative-line left"></div>
+                    <button class="exchange-icon" id="exchange-button">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                    <div class="decorative-line right"></div>
+                </div>
+                <div class="currency-row">
+                    <label for="to-amount">Converted Amount</label>
+                    <div class="currency-input">
+                        <div class="custom-select" id="to-currency">
+                            <div class="select-selected">Select currency</div>
+                            <div class="select-items select-hide">
+                            </div>
+                        </div>
+                        <input type="number" id="to-amount" placeholder="0.00" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="exchange-rate">Indicative Exchange Rate: <span id="exchange-rate"></span></div>
+        </div>
+        <footer class="footer">
+            <p class="body-4">
+                Copyright &copy; 2024 <a href="https://github.com/KevinQzG" target="_blank" rel="noopener">Kevin Quiroz</a>. All rights reserved.
+                </p>
+        </footer>
+        <p class="body-3">
+            Powered By <a href="https://app.exchangerate-api.com/" title="Free Exchangerate-API" target="_blank"  rel="noopener">
+             <img src="./assets/images/api-logo.png" width="100" height="15" loading="lazy" alt="exchangerate-api">
+           </a>
+    </main>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/language.js"></script>
+
+</body>
+</html>

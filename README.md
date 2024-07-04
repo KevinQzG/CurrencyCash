@@ -13,6 +13,7 @@ Welcome to **CurrentlyCash**, the ultimate currency exchange information platfor
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Setup and Installation](#setup-and-installation)
+  - [Photos](#photos)
 - [Thank you!](#thank-you-for-using-currentlycash)
 
 ## Project Overview
@@ -51,7 +52,15 @@ Follow these steps to set up the project locally:
    ```bash
    http://localhost:3000
 
- 
+## Photos
+<p align="center">
+  <img src="https://github.com/KevinQzG/CurrencyCash/assets/104176447/50574daf-9e10-47a4-91d2-c581b1502266" width="200" />
+  <img src="https://github.com/KevinQzG/CurrencyCash/assets/104176447/ce4744f7-1a1b-429e-9b32-98da20ce91fd" width="280" />
+  <img src="https://github.com/KevinQzG/CurrencyCash/assets/104176447/b6087f31-edc5-4662-8d2d-47eb807f5403" width="500" />
+</p>
+
+
+
 ### Thank you for using CurrentlyCash!
    
 

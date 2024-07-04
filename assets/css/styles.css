@@ -505,7 +505,6 @@ input[type="number"] {
    }
 }
 
-
 @media (max-width: 480px) {
    nav {
       display: flex;

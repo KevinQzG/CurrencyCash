@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectElement = document.querySelector('.custom-select');
     selectElement.setAttribute('tabindex', '0');
 
-    // Objeto para almacenar la última opción seleccionada por tecla
     let lastSelectedIndexByKey = {};
 
     selectElement.addEventListener('keydown', (e) => {
@@ -11,15 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const options = Array.from(selectElement.querySelectorAll('.option'));
         const pressedKey = e.key.toLowerCase();
 
-        // Iniciar búsqueda desde la última opción seleccionada + 1, o desde el principio
         let startIndex = lastSelectedIndexByKey[pressedKey] + 1 || 0;
 
         for (let i = startIndex; i < options.length + startIndex; i++) {
-            let option = options[i % options.length]; // Usar módulo para volver al inicio de la lista
+            let option = options[i % options.length]; 
             if (option.textContent.trim().toLowerCase().startsWith(pressedKey)) {
                 option.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                lastSelectedIndexByKey[pressedKey] = i % options.length; // Almacenar índice actual
-                break; // Salir del bucle una vez que se encuentra la siguiente coincidencia
+                lastSelectedIndexByKey[pressedKey] = i % options.length;
+                break; 
             }
         }
     });

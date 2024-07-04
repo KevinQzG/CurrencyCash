@@ -2,7 +2,7 @@
 Welcome to **CurrentlyCash**, the ultimate currency exchange information platform. This project aims to provide real-time currency exchange rates with a user-friendly and responsive web interface.
 
 <p align="center">
-  <img src="https://github.com/KevinQzG/CurrencyCash/assets/104176447/b8022580-e0ca-4039-ad1d-c5615bc117c4" alt="logo">
+  <img src="https://github.com/KevinQzG/CurrencyCash/assets/104176447/eb51bfac-f987-4956-8a8b-a84ad0a9a72e" alt="logo">
 </p>
 
 ## Table of Contents
@@ -13,7 +13,7 @@ Welcome to **CurrentlyCash**, the ultimate currency exchange information platfor
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Setup and Installation](#setup-and-installation)
-    - [Thank you for using CurrentlyCash!](#thank-you-for-using-currentlycash)
+- [Thank you!](#thank-you-for-using-currentlycash)
 
 ## Project Overview
 

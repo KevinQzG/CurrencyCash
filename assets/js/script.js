@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const selectElement = document.querySelector('.custom-select');
+    selectElement.setAttribute('tabindex', '0');
+
+    // Objeto para almacenar la última opción seleccionada por tecla
+    let lastSelectedIndexByKey = {};
+
+    selectElement.addEventListener('keydown', (e) => {
+        if (!e.key.match(/^[a-z]$/i)) return;
+
+        const options = Array.from(selectElement.querySelectorAll('.option'));
+        const pressedKey = e.key.toLowerCase();
+
+        // Iniciar búsqueda desde la última opción seleccionada + 1, o desde el principio
+        let startIndex = lastSelectedIndexByKey[pressedKey] + 1 || 0;
+
+        for (let i = startIndex; i < options.length + startIndex; i++) {
+            let option = options[i % options.length]; // Usar módulo para volver al inicio de la lista
+            if (option.textContent.trim().toLowerCase().startsWith(pressedKey)) {
+                option.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                lastSelectedIndexByKey[pressedKey] = i % options.length; // Almacenar índice actual
+                break; // Salir del bucle una vez que se encuentra la siguiente coincidencia
+            }
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const fromCurrency = document.getElementById('from-currency');
     const toCurrency = document.getElementById('to-currency');
     const fromAmount = document.getElementById('from-amount');
@@ -164,6 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'ZWL': { name: 'Zimbabwean Dollar', flag: 'zw.svg' },
     };
 
+    const lastKeyPress = {};
+
     const loadCurrencies = () => {
         Object.keys(currencies).forEach(code => {
             const currency = currencies[code];
@@ -198,6 +227,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 selected.classList.remove('select-arrow-active');
             }
         });
+
+        document.addEventListener('keydown', function (e) {
+            if (!items.classList.contains('select-hide')) {
+                const options = items.querySelectorAll('.option');
+                const key = e.key.toLowerCase();
+
+                if (!lastKeyPress[key]) {
+                    lastKeyPress[key] = -1;
+                }
+
+                let nextIndex = -1;
+                for (let i = lastKeyPress[key] + 1; i < options.length; i++) {
+                    if (options[i].textContent.toLowerCase().startsWith(key)) {
+                        nextIndex = i;
+                        break;
+                    }
+                }
+
+                if (nextIndex === -1) {
+                    for (let i = 0; i <= lastKeyPress[key]; i++) {
+                        if (options[i].textContent.toLowerCase().startsWith(key)) {
+                            nextIndex = i;
+                            break;
+                        }
+                    }
+                }
+
+                if (nextIndex !== -1) {
+                    options[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    lastKeyPress[key] = nextIndex;
+                }
+            }
+        });
     };
 
     const closeAllSelect = (element) => {
@@ -213,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+   
     document.addEventListener('click', (e) => {
         closeAllSelect(e.target);
     });

@@ -329,6 +329,17 @@ document.addEventListener('DOMContentLoaded', () => {
    updateExchangeRate();
 });
 
+document.getElementById('from-amount').addEventListener('input', function (e) {
+    const input = e.target;
+    const value = input.value;
+
+    const filteredValue = value.replace(/[^0-9.,]/g, '');
+
+    if (value !== filteredValue) {
+        input.value = filteredValue;
+    }
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
    const languageOptions = document.querySelectorAll(".language-option");

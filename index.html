@@ -44,7 +44,7 @@
                 <div class="currency-row">
                     <label for="from-amount">Amount</label>
                     <div class="currency-input">
-                        <div class="custom-select" id="from-currency">
+                        <div class="custom-select1" id="from-currency">
                             <div class="select-selected">Select currency</div>
                             <div class="select-items select-hide">
                             </div>
@@ -62,7 +62,7 @@
                 <div class="currency-row">
                     <label for="to-amount">Converted Amount</label>
                     <div class="currency-input">
-                        <div class="custom-select" id="to-currency">
+                        <div class="custom-select2" id="to-currency">
                             <div class="select-selected">Select currency</div>
                             <div class="select-items select-hide">
                             </div>
@@ -85,5 +85,13 @@
     </main>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/language.js"></script>
+    <script>
+        function validateNumberInput(input) {
+            const value = input.value;
+            if (!/^\d*\.?\d*$/.test(value)) {
+                input.value = value.slice(0, -1);
+            }
+        }
+    </script>
 </body>
 </html>

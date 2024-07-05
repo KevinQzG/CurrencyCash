@@ -173,7 +173,13 @@ nav ul li a:hover {
    border-radius: 50%;
 }
 
-.custom-select {
+.custom-select1 {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+}
+
+.custom-select2 {
    position: relative;
    display: inline-block;
    width: 100%;

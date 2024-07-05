@@ -1,27 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const selectElement = document.querySelector('.custom-select');
+    const selectElement = document.querySelector('.custom-select1');
     selectElement.setAttribute('tabindex', '0');
-
-    let lastSelectedIndexByKey = {};
+    let lastSelectedIndexForKey = {}; 
 
     selectElement.addEventListener('keydown', (e) => {
-        if (!e.key.match(/^[a-z]$/i)) return;
+        if (!e.key.match(/^[a-z]$/i)) return; 
 
-        const options = Array.from(selectElement.querySelectorAll('.option'));
+        const options = selectElement.querySelectorAll('.option');
         const pressedKey = e.key.toLowerCase();
+        let startIndex = lastSelectedIndexForKey[pressedKey] + 1 || 0; 
 
-        let startIndex = lastSelectedIndexByKey[pressedKey] + 1 || 0;
-
-        for (let i = startIndex; i < options.length + startIndex; i++) {
-            let option = options[i % options.length]; 
+        for (let i = startIndex; i < startIndex + options.length; i++) { 
+            let option = options[i % options.length];
             if (option.textContent.trim().toLowerCase().startsWith(pressedKey)) {
                 option.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                lastSelectedIndexByKey[pressedKey] = i % options.length;
-                break; 
+                lastSelectedIndexForKey[pressedKey] = i % options.length;
+                break;
             }
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const selectElement = document.querySelector('.custom-select2');
+    selectElement.setAttribute('tabindex', '0');
+    let lastSelectedIndexForKey = {};
+
+    selectElement.addEventListener('keydown', (e) => {
+        if (!e.key.match(/^[a-z]$/i)) return; 
+
+        const options = selectElement.querySelectorAll('.option');
+        const pressedKey = e.key.toLowerCase();
+        let startIndex = lastSelectedIndexForKey[pressedKey] + 1 || 0; 
+
+        for (let i = startIndex; i < startIndex + options.length; i++) {
+            let option = options[i % options.length];
+            if (option.textContent.trim().toLowerCase().startsWith(pressedKey)) {
+                option.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                lastSelectedIndexForKey[pressedKey] = i % options.length; 
+                break;
+            }
+        }
+    });
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const fromCurrency = document.getElementById('from-currency');
@@ -278,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeAllSelect(e.target);
     });
 
-    const updateExchangeRate = async () => {
+  const updateExchangeRate = async () => {
         const from = fromCurrency.getAttribute('data-value');
         const to = toCurrency.getAttribute('data-value');
         if (!from || !to) return;
@@ -287,9 +309,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
 
         const rate = data.conversion_rates[to];
-        exchangeRateDisplay.textContent = `1 ${from} = ${rate} ${to}`;
-        toAmount.value = (fromAmount.value * rate).toFixed(2);
-    };
+        const formattedRate = rate.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/\./g, ',');
+        exchangeRateDisplay.textContent = `1 ${from} = ${formattedRate} ${to}`;
+        toAmount.value = (fromAmount.value * rate).toFixed(2);};
+   
+
 
     exchangeButton.addEventListener('click', () => {
         const fromSelected = fromCurrency.getAttribute('data-value');

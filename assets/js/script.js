@@ -333,7 +333,7 @@ document.getElementById('from-amount').addEventListener('input', function (e) {
     const input = e.target;
     const value = input.value;
 
-    const filteredValue = value.replace(/[^0-9.,]/g, '');
+    const filteredValue = value.replace(/[^0-9.,]/g, '').replace(/e/g, '');
 
     if (value !== filteredValue) {
         input.value = filteredValue;

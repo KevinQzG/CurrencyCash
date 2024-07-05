@@ -12,10 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
     <nav>
@@ -46,8 +43,7 @@
                     <div class="currency-input">
                         <div class="custom-select1" id="from-currency">
                             <div class="select-selected">Select currency</div>
-                            <div class="select-items select-hide">
-                            </div>
+                            <div class="select-items select-hide"></div>
                         </div>
                         <input type="number" id="from-amount" placeholder="1000.00" inputmode="decimal" step="0.01" oninput="validateNumberInput(this)">
                     </div>
@@ -64,24 +60,24 @@
                     <div class="currency-input">
                         <div class="custom-select2" id="to-currency">
                             <div class="select-selected">Select currency</div>
-                            <div class="select-items select-hide">
-                            </div>
+                            <div class="select-items select-hide"></div>
                         </div>
                         <input type="number" id="to-amount" placeholder="0.00" readonly>
                     </div>
                 </div>
             </div>
-            <div class="exchange-rate">Indicative Exchange Rate: <span id="exchange-rate"></span></div>
+            <div class="exchange-rate"><span class="exchange-rate-label">Indicative Exchange Rate:</span> <span id="exchange-rate"></span></div>
         </div>
         <footer class="footer">
             <p class="body-4">
                 Copyright &copy; 2024 <a href="https://github.com/KevinQzG" target="_blank" rel="noopener">Kevin Quiroz</a>. All rights reserved.
-                </p>
+            </p>
         </footer>
         <p class="body-3">
             Powered By <a href="https://app.exchangerate-api.com/" title="Free Exchangerate-API" target="_blank"  rel="noopener">
-             <img src="./assets/images/api-logo.png" width="100" height="15" loading="lazy" alt="exchangerate-api">
-           </a>
+                <img src="./assets/images/api-logo.png" width="100" height="15" loading="lazy" alt="exchangerate-api">
+            </a>
+        </p>
     </main>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/language.js"></script>

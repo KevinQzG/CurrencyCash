@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
    const fromAmountInput = document.getElementById('from-amount');
    const toAmountInput = document.getElementById('to-amount');
    const exchangeRateDisplay = document.getElementById('exchange-rate');
-   const exchangeButton = document.querySelector('.exchange-button');
+   const exchangeButton = document.querySelector('.exchange-icon');
 
    const translations = {
        en: {
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
            amount: "Amount",
            selectCurrency: "Select currency",
            convertedAmount: "Converted Amount",
-           exchangeRate: "Indicative Exchange Rate:"
        },
        es: {
            home: "Inicio",
@@ -77,10 +76,8 @@ document.addEventListener("DOMContentLoaded", function() {
        document.querySelector(".converter-container p").textContent = translations[lang].description;
        document.querySelector(".currency-row label[for='from-amount']").textContent = translations[lang].amount;
        document.querySelector(".currency-row label[for='to-amount']").textContent = translations[lang].convertedAmount;
-       document.querySelector(".exchange-rate").innerHTML = `${translations[lang].exchangeRate} <span id="exchange-rate"></span>`;
-       document.querySelectorAll(".select-selected").forEach(el => el.textContent = translations[lang].selectCurrency);
+       document.querySelector(".exchange-rate-label").textContent = translations[lang].exchangeRate;
 
-       // Call updateExchangeRate to update the exchange rate display
        updateExchangeRate();
    }
 
@@ -95,13 +92,17 @@ document.addEventListener("DOMContentLoaded", function() {
        const data = await response.json();
 
        const rate = data.conversion_rates[toCurrency];
-       exchangeRateDisplay.textContent = `1 ${fromCurrency} = ${rate} ${toCurrency}`;
+       const lang = document.documentElement.lang || 'en';
+       const translatedRateText = translations[lang].exchangeRate;
+
+       exchangeRateDisplay.innerHTML = `${translatedRateText} 1 ${fromCurrency} = ${rate} ${toCurrency}`;
        toAmountInput.value = (fromAmountInput.value * rate).toFixed(2);
    }
 
    languageOptions.forEach(option => {
        option.addEventListener("click", function() {
            const lang = this.getAttribute("data-lang");
+           document.documentElement.lang = lang;  
            changeLanguage(lang);
        });
    });

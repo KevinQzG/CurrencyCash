@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rate = data.conversion_rates[to];
         const formattedRate = rate.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/\./g, ',');
         exchangeRateDisplay.textContent = `1 ${from} = ${formattedRate} ${to}`;
-        toAmount.value = (fromAmount.value * rate).toFixed(2);};
+        toAmount.value = (fromAmount.value * rate).toFixed};
    
 
 

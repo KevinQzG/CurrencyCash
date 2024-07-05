@@ -45,7 +45,7 @@
                             <div class="select-selected">Select currency</div>
                             <div class="select-items select-hide"></div>
                         </div>
-                        <input type="number" id="from-amount" placeholder="1000.00" inputmode="decimal" step="0.01" oninput="validateNumberInput(this)">
+                        <input type="text" id="from-amount" placeholder="$ 100.00" inputmode="decimal">
                     </div>
                 </div>
                 <div class="exchange-container">
@@ -62,11 +62,11 @@
                             <div class="select-selected">Select currency</div>
                             <div class="select-items select-hide"></div>
                         </div>
-                        <input type="number" id="to-amount" placeholder="0.00" readonly>
+                        <input type="text" id="to-amount" placeholder="€ 100.00" readonly>
                     </div>
                 </div>
             </div>
-            <div class="exchange-rate"><span class="exchange-rate-label">Indicative Exchange Rate:</span> <span id="exchange-rate"></span></div>
+            <div class="exchange-rate"><span class="exchange-rate-label"></span> <span id="exchange-rate"></span></div>
         </div>
         <footer class="footer">
             <p class="body-4">
@@ -80,14 +80,4 @@
         </p>
     </main>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/language.js"></script>
     <script>
-        function validateNumberInput(input) {
-            const value = input.value;
-            if (!/^\d*\.?\d*$/.test(value)) {
-                input.value = value.slice(0, -1);
-            }
-        }
-    </script>
-</body>
-</html>

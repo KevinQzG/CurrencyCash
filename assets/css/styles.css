@@ -271,7 +271,7 @@ nav ul li a:hover {
    background-color: #333;
 }
 
-input[type="number"] {
+input[type="text"] {
    padding: 1rem;
    font-size: 1.2rem;
    border: 1px solid #dedddd;
@@ -408,7 +408,7 @@ input[type="number"] {
       font-size: 1rem;
    }
 
-   input[type="number"] {
+   input[type="text"] {
       font-size: 1rem;
       padding: 0.8rem;
    }
@@ -571,7 +571,7 @@ input[type="number"] {
       font-size: 0.9rem;
    }
 
-   input[type="number"] {
+   input[type="text"] {
       font-size: 0.9rem;
       padding: 0.6rem;
    }

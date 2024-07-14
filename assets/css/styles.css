@@ -137,14 +137,14 @@ nav ul li a:hover {
    padding-bottom: 3rem;
 }
 
-.body-4{
+.body-4 {
    font-size: 1.2rem;
    padding: 0.4rem;
    color: #ffffff;
    font-weight: bold;
 }
 
-.body-3{
+.body-3 {
    font-size: 0.7rem;
    padding: 0.4rem;
    color: #ffffff;
@@ -196,7 +196,7 @@ nav ul li a:hover {
    cursor: pointer;
    display: flex;
    align-items: center;
-   justify-content:center;
+   justify-content: center;
    transition: background-color 0.3s ease;
    color: #fff;
 }
@@ -301,9 +301,11 @@ input[type="text"] {
    position: absolute;
    top: 50%;
    height: 2px;
-   background-color: #e0e0e0; /* Light grey color */
+   background-color: #e0e0e0;
+   /* Light grey color */
    transform: translateY(-50%);
-   width: calc(50% - 40px); /* Adjust this value to ensure the lines are equal in length */
+   width: calc(50% - 40px);
+   /* Adjust this value to ensure the lines are equal in length */
    z-index: 0;
 }
 
@@ -316,7 +318,8 @@ input[type="text"] {
 }
 
 .exchange-icon {
-   background-color: #0d8a1c; /* Green color */
+   background-color: #0d8a1c;
+   /* Green color */
    display: flex;
    align-items: center;
    justify-content: center;
@@ -431,9 +434,9 @@ input[type="text"] {
    }
 }
 
-@media screen and (max-width: 844px){
-   
-nav {
+@media screen and (max-width: 844px) {
+
+   nav {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -758,5 +761,3 @@ nav {
       font-size: 0.9rem;
    }
 }
-
-
